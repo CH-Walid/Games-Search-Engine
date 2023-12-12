@@ -11,9 +11,9 @@ interface GameCardProps {
 
 export const GameCard = ({ game }: GameCardProps) => {
   return (
-    <Card>
-      <Image src={getCroppedImageURL(game.background_image)} />
-      <CardBody>
+    <Card boxShadow='md' cursor='pointer'>
+      <Image src={getCroppedImageURL(game.background_image)} objectFit='cover' />
+      <CardBody overflow='hidden'>
         <HStack justifyContent="space-between" mb={2}>
           <HStack my="4px">
             {game.platforms.map(({ platform }) => {
