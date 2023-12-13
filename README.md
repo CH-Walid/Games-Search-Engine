@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# 🚀 GameSearch Engine in React, TypeScript, and Vite 🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the GameSearch Engine repository.
 
-Currently, two official plugins are available:
+## Features: 🔍
+- **Fetches** a diverse array of video games from an external API.
+- **Responsive grid layout** for an optimal viewing experience on any device.
+- Robust **filtering** options by Genre and Platform to help you find your perfect game.
+- Versatile **sorting** capabilities by date, rating, name, and more.
+- Intuitive **search** functionality by name or keywords for quick discoveries.
+- Embrace the darkness with the **Dark Mode switch**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Image Optimization with Crop Image API: 🖼️
+Behind the scenes, I've implemented the **Crop Image API** to efficiently decrease the size of images fetched from the games API. This ensures faster loading times and a smoother overall performance, enhancing the user experience.
 
-## Expanding the ESLint configuration
+## Tech Stack: 💻 
+- **React 18** for a cutting-edge and dynamic user interface.
+- **TypeScript** to bring type safety and maintainability to the codebase.
+- **Vite** for a fast and efficient development environment.
+- **Chakra UI** for a delightful and accessible component library.
+- **Axios** for seamless API communication.
+- **Vercel** for effortless deployment, ensuring your gaming experience is just a click away.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+### Run Locally
+
+In project directory:
+
+- create .env file and add your API key:
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+VITE_RAWG_API_KEY=''
+VITE_RAWG_BASE_URL=''
 ```
+- Run
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```js
+npm install
+npm run dev
+```
