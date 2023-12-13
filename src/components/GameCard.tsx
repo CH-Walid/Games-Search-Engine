@@ -11,24 +11,24 @@ interface GameCardProps {
 
 export const GameCard = ({ game }: GameCardProps) => {
   return (
-    <Card boxShadow="md" cursor="pointer" className="cardG" minHeight="340px">
+    <Card cursor="pointer" height="335px">
       <Image
         src={getCroppedImageURL(game.background_image)}
         objectFit="cover"
       />
       <CardBody overflow="hidden">
-        <HStack justifyContent="space-between" mb={2}>
-          <HStack my="4px">
-            {game.platforms.map(({ platform }) => {
-              return <PlatformIcon key={platform.id} platform={platform} />;
-            })}
+          <HStack justifyContent="space-between" mb={2}>
+            <HStack my="4px">
+              {game.platforms.map(({ platform }) => {
+                return <PlatformIcon key={platform.id} platform={platform} />;
+              })}
+            </HStack>
+            <CriticScore score={game.metacritic} />
           </HStack>
-          <CriticScore score={game.metacritic} />
-        </HStack>
-        <Heading fontSize={"2xl"}>
-          {game.name.length > 30 ? game.name.slice(0, 30) + "..." : game.name}
-        </Heading>
-        <Emoji rating={game.rating_top} />
+          <Heading fontSize={"2xl"}>
+            {game.name.length > 30 ? game.name.slice(0, 30) + "..." : game.name}
+          </Heading>
+            <Emoji rating={game.rating_top} />
       </CardBody>
     </Card>
   );

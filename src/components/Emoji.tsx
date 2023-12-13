@@ -1,19 +1,18 @@
-import meh from "../assets/meh.webp";
-import bullsEye from "../assets/bulls-eye.webp";
-import thumbsUp from "../assets/thumbs-up.webp";
-import { Image, ImageProps } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { IoStar } from "react-icons/io5";
 
 interface Props {
   rating: number;
 }
 
 const Emoji = ({ rating }: Props) => {
-  const emojiMap: { [key: number]: ImageProps } = {
-    3: { src: meh, alt: "meh", boxSize: "25px" },
-    4: { src: bullsEye, alt: "recommended", boxSize: "35px" },
-    5: { src: thumbsUp, alt: "exceptional", boxSize: "25px" },
-  };
-
-  return <Image {...emojiMap[rating]} mt={2} />;
+return (
+  <Flex opacity={0.4} my={2}>
+  {rating === 3 &&  <><IoStar/><IoStar/><IoStar/></>}
+  {rating === 4 &&  <><IoStar/><IoStar/><IoStar/><IoStar/></>}
+  {rating === 5 &&  <><IoStar/><IoStar/><IoStar/><IoStar/><IoStar/></>}
+  </Flex>
+);
+  
 };
 export default Emoji;
