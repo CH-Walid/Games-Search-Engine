@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 const GameCardContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Box
-      boxShadow="xl"
       _hover={{
         transform: "scale(1.03)",
         transition: "transform .15s ease-in",

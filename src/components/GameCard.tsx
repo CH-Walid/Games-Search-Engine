@@ -11,13 +11,13 @@ interface GameCardProps {
 
 export const GameCard = ({ game }: GameCardProps) => {
   return (
-    <Card cursor="pointer" minHeight="330px">
+    <Card cursor="pointer" minHeight={'340px'}>
       <Image
         src={getCroppedImageURL(game.background_image)}
         objectFit="cover"
       />
       <CardBody overflow="hidden">
-      <Flex flexDirection='column' gap={1}>
+      <Flex flexDirection='column' gap={2}>
           <HStack justifyContent="space-between">
             <HStack>
               {game.platforms.map(({ platform }) => {
