@@ -1,5 +1,5 @@
 import { type Game } from "../hooks/useGames";
-import { Card, Image, CardBody, Heading, HStack } from "@chakra-ui/react";
+import { Card, Image, CardBody, Heading, HStack, Flex } from "@chakra-ui/react";
 import PlatformIcon from "./PlatformIcon";
 import CriticScore from "./CriticScore";
 import getCroppedImageURL from "../services/image-url";
@@ -11,14 +11,15 @@ interface GameCardProps {
 
 export const GameCard = ({ game }: GameCardProps) => {
   return (
-    <Card cursor="pointer" height="335px">
+    <Card cursor="pointer" minHeight="330px">
       <Image
         src={getCroppedImageURL(game.background_image)}
         objectFit="cover"
       />
       <CardBody overflow="hidden">
-          <HStack justifyContent="space-between" mb={2}>
-            <HStack my="4px">
+      <Flex flexDirection='column' gap={1}>
+          <HStack justifyContent="space-between">
+            <HStack>
               {game.platforms.map(({ platform }) => {
                 return <PlatformIcon key={platform.id} platform={platform} />;
               })}
@@ -28,7 +29,8 @@ export const GameCard = ({ game }: GameCardProps) => {
           <Heading fontSize={"2xl"}>
             {game.name.length > 30 ? game.name.slice(0, 30) + "..." : game.name}
           </Heading>
-            <Emoji rating={game.rating_top} />
+          <Emoji rating={game.rating_top} />
+      </Flex>
       </CardBody>
     </Card>
   );
